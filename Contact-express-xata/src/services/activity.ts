@@ -53,4 +53,13 @@ router.patch('/:id', async (req: Request, resp: Response) => {
     }
 });
 
+router.delete('/:id', async (req: Request, resp: Response) => {
+    try {
+        console.log(`Deleting activity: ${req.params.id}`);
+        resp.json(await xata.db.activity.delete(req.params.id));
+    } catch (err: any) {
+        resp.status(400).send({Error: err.toString()});
+    }
+})
+
 export default router;
