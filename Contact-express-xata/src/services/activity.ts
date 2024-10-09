@@ -20,6 +20,14 @@ router.get('/', async (req: Request, resp: Response) => {
     }
 });
 
-
+// create an activity object
+router.post('/', async (req: Request, resp: Response) => {
+    try {
+        console.log(`Creating activity: ${req.body}`);
+        resp.json(await xata.db.activity.create(req.body));
+    } catch (err: any) {
+        resp.status(500).send({Error: err.toString()});
+    }
+})
 
 export default router;
