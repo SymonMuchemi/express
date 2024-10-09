@@ -1,0 +1,26 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cs324lq2go8te7ad4mrg",
+    "operations": [
+      {
+        "add_column": {
+          "table": "activity",
+          "column": {
+            "pk": false,
+            "name": "type",
+            "type": "text",
+            "unique": false,
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cs324lq2go8te7ad4mrg",
+  "parent": "mig_cs324i22go8te7ad4mqg",
+  "schema": "public",
+  "startedAt": "2024-10-09T06:27:36.08316Z"
+}

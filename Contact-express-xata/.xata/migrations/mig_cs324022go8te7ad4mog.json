@@ -1,0 +1,27 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cs324022go8te7ad4mog",
+    "operations": [
+      {
+        "add_column": {
+          "up": "''",
+          "table": "contact",
+          "column": {
+            "pk": false,
+            "name": "name",
+            "type": "text",
+            "unique": false,
+            "comment": "",
+            "nullable": false
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cs324022go8te7ad4mog",
+  "parent": "mig_cs323n54rshpd1p6db20",
+  "schema": "public",
+  "startedAt": "2024-10-09T06:26:09.576857Z"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "contact-express-xata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "@xata.io/cli": "^0.16.11",
+    "@xata.io/client": "0.0.0-next.v403cdd55cb26b69c074dbc07b44daa0c2a0a77b6",
+    "dotenv": "^16.4.5",
+    "esbuild": "^0.24.0",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "rollup": "^4.24.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}

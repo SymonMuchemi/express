@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Simon-Muchemi-s-workspace-hveses.us-east-1.xata.sh/db/contactdb",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
