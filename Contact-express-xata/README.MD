@@ -49,7 +49,7 @@ The API has the following endpoints:
 1. `GET /api/contacts`: Get all contacts.
 1. `GET /api/contacts/:id`: Get a contact by ID.
 1. `POST /api/contacts`: Create a new contact.
-1. `PUT /api/contacts/:id`: Update a contact by ID.
+1. `PATCH /api/contacts/:id`: Update a contact by ID.
 1. `DELETE /api/contacts/:id`: Delete a contact by ID.
 
 ### Activities
@@ -57,5 +57,5 @@ The API has the following endpoints:
 1. `GET /api/activities`: Get all activities.
 2. `GET /api/activities/:id`: Get an activity by ID.
 3. `POST /api/activities`: Create a new activity.
-4. `PUT /api/activities/:id`: Update an activity by ID.
+4. `PATCH /api/activities/:id`: Update an activity by ID.
 5. `DELETE /api/activities/:id`: Delete an activity by ID.
