@@ -56,14 +56,15 @@ router.post('/', contactSchema, asyncHandler(async (req: Request, resp: Response
 }));
 
 // updating a contact object
-router.put('/:id', contactSchema, asyncHandler(async (req: Request, resp: Response) => {
+router.patch('/:id', contactSchema, asyncHandler(async (req: Request, resp: Response) => {
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return resp.status(400).json({ errors: errors.array() });
         }
         console.log(`Updating contact: ${req.params.id}`);
-        resp.json(await xata.db.contact.update(req.params.id, req.body));
+        const response = await xata.db.contact.update(req.params.id, req.body);
+        resp.json({Message: 'Update successfull!', Payload: response});
     } catch (error: any) {
         resp.status(500).send({ Error: error.toString() });
     }
@@ -72,7 +73,8 @@ router.put('/:id', contactSchema, asyncHandler(async (req: Request, resp: Respon
 router.delete('/:id', async (req: Request, resp: Response) => {
     try {
         console.log(`Deleting contact: ${req.params.id}`);
-        resp.json(await xata.db.contact.delete(req.params.id));
+        const deletedObj = await xata.db.contact.delete(req.params.id);
+        resp.json({ Message: 'Deletion sucessfull!', payload: deletedObj });
     } catch (error: any) {
         resp.status(500).send({ Error: error.toString() });
     }
