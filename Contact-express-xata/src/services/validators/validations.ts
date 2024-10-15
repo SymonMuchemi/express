@@ -24,8 +24,8 @@ export const activitySchema = checkSchema({
             errorMessage: 'Status must be a string!'
         },
         isLength: {
-            options: { min: 5, max: 10 },
-            errorMessage: "Status must be a string of 5-10 characters!"
+            options: { min: 5, max: 20 },
+            errorMessage: "Status must be a string of 5-20 characters!"
         }
     }
 })
@@ -45,7 +45,7 @@ export const contactSchema = checkSchema({
             errorMessage: "Email must be a valid email address!"
         },
         isLength: {
-            options: {min: 10, max: 50},
+            options: { min: 10, max: 50 },
             errorMessage: 'Email must be 10-50 characters long!'
         }
     }

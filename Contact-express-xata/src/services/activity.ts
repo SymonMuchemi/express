@@ -2,6 +2,7 @@ import express, { Router, Response, Request, NextFunction } from "express";
 import { validationResult } from "express-validator";
 import { XataClient } from "../xata";
 import { activitySchema } from './validators/validations';
+import { Activity } from './validators/types'
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -35,7 +36,8 @@ router.post('/', activitySchema, asyncHandler(async (req: Request, resp: Respons
             return resp.status(400).json({ errors: errors.array() });
         }
         console.log(`Creating activity: ${req.body}`);
-        resp.json(await xata.db.activity.create(req.body));
+        const createdObj = await xata.db.activity.create(req.body);
+        resp.json({ Message: 'Creating successfull!', payload: createdObj });
     } catch (err: any) {
         resp.status(500).send({ Error: err.toString() });
     }
@@ -55,23 +57,22 @@ router.get('/:id', async (req: Request, resp: Response) => {
 });
 
 // update an activity
-router.patch('/:id', activitySchema, asyncHandler(async (req: Request, resp: Response) => {
+router.patch('/:id', async (req: Request, resp: Response) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return resp.status(400).json({ errors: errors.array() });
-        }
         console.log(`Updating activity: ${req.params.id}`);
-        resp.json(await xata.db.activity.update(req.params.id, req.body));
+        const body = req.body;
+        const updatedObj = await xata.db.activity.update(req.params.id, body);
+        resp.json({ Message: 'Update successful!', Payload: updatedObj });
     } catch (err: any) {
         resp.status(400).send({ Error: err.toString() });
     }
-}));
+});
 
 router.delete('/:id', async (req: Request, resp: Response) => {
     try {
         console.log(`Deleting activity: ${req.params.id}`);
-        resp.json(await xata.db.activity.delete(req.params.id));
+        const deletedObj = await xata.db.activity.deleteOrThrow(req.params.id)
+        resp.json({ Message: 'Deletion successful!', Payload: deletedObj });
     } catch (err: any) {
         resp.status(400).send({ Error: err.toString() });
     }
