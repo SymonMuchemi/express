@@ -4,20 +4,20 @@
     "password": "123456789",
     "database": "auth_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "symon",
     "password": "123456789",
     "database": "auth_db_test",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
     "username": "symon",
     "password": "123456789",
     "database": "auth_db_dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
