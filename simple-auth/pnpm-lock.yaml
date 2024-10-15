@@ -24,9 +24,15 @@ importers:
         specifier: ^6.6.2
         version: 6.6.2
     devDependencies:
+      '@types/bcryptjs':
+        specifier: ^2.4.6
+        version: 2.4.6
       '@types/express':
         specifier: ^5.0.0
         version: 5.0.0
+      '@types/jsonwebtoken':
+        specifier: ^9.0.7
+        version: 9.0.7
       '@types/node':
         specifier: ^22.7.5
         version: 22.7.5
@@ -82,6 +88,9 @@ packages:
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
 
+  '@types/bcryptjs@2.4.6':
+    resolution: {integrity: sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==}
+
   '@types/bluebird@3.5.42':
     resolution: {integrity: sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==}
 
@@ -105,6 +114,9 @@ packages:
 
   '@types/http-errors@2.0.4':
     resolution: {integrity: sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==}
+
+  '@types/jsonwebtoken@9.0.7':
+    resolution: {integrity: sha512-ugo316mmTYBl2g81zDFnZ7cfxlut3o+/EQdaP7J8QN2kY6lJ22hmQYCK5EHcJHbrW+dkCGSCPgbG8JtYj6qSrg==}
 
   '@types/lodash@4.17.10':
     resolution: {integrity: sha512-YpS0zzoduEhuOWjAotS6A5AVCva7X4lVlYLF0FYHAY9sdraBfnatttHItlWeZdGhuEkf+OzMNg2ZYAx8t+52uQ==}
@@ -1007,6 +1019,8 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
+  '@types/bcryptjs@2.4.6': {}
+
   '@types/bluebird@3.5.42': {}
 
   '@types/body-parser@1.19.5':
@@ -1041,6 +1055,10 @@ snapshots:
       '@types/serve-static': 1.15.7
 
   '@types/http-errors@2.0.4': {}
+
+  '@types/jsonwebtoken@9.0.7':
+    dependencies:
+      '@types/node': 22.7.5
 
   '@types/lodash@4.17.10': {}
 
