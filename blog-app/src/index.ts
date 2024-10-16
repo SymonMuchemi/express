@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import userRouter from "./routes/userRoutes";
 import postRouter from "./routes/postRoutes";
+import feedRouter from "./routes/feedRoutes";
 import dotenv from 'dotenv';
 
 dotenv.config()
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use('/api/users', userRouter);
 app.use('/api/posts', postRouter);
+app.use('/api/feed', feedRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port: ${PORT}`);
