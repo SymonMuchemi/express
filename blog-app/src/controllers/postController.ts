@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Post } from "@prisma/client";
 
 const prisma: PrismaClient = new PrismaClient();
 
@@ -8,7 +8,7 @@ const prisma: PrismaClient = new PrismaClient();
  * @returns {Promise<Array>} A promise that resolves to an array of posts.
  */
 export const fetchAllPosts = async () => {
-    const posts = await prisma.post.findMany();
+    const posts: Post[] = await prisma.post.findMany();
 
     return posts;
 }
@@ -20,7 +20,7 @@ export const fetchAllPosts = async () => {
  * @returns A promise that resolves to the post object if found, otherwise null.
  */
 export const fetchPostById = async (id: number) => {
-    const post = await prisma.post.findUnique({
+    const post: Post | null = await prisma.post.findUnique({
         where: { id: id }
     });
 
