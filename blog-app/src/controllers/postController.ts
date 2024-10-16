@@ -1,4 +1,5 @@
 import { PrismaClient, Post } from "@prisma/client";
+import { PostBody } from "../types/types";
 
 const prisma: PrismaClient = new PrismaClient();
 
@@ -25,4 +26,24 @@ export const fetchPostById = async (id: number) => {
     });
 
     return post;
+}
+
+/**
+ * Creates a new post with the given post body.
+ *
+ * @param postBody - The body of the post to be created, containing title, content, and author email.
+ * @returns The created post object.
+ */
+export const createPost = async (postBody: PostBody) => {
+    const { title, content, authorEmail } = postBody;
+    const result = await prisma.post.create({
+        data: {
+            title,
+            content,
+            published: false,
+            author: { connect: { email: authorEmail } }
+        },
+    });
+
+    return result;
 }
