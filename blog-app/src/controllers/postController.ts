@@ -63,6 +63,12 @@ export const publishPost = async (id: number) => {
     return publishedPost;
 }
 
+/**
+ * Deletes a post by its ID.
+ *
+ * @param id - The ID of the post to delete.
+ * @returns The deleted post object.
+ */
 export const deletePost = async (id: number) => {
     const deletedPost = await prisma.post.delete({
         where: { id: id }
