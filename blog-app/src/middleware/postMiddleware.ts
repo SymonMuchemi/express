@@ -95,6 +95,16 @@ export const publish = async (req: Request, resp: Response) => {
     }
 }
 
+/**
+ * Middleware to handle the deletion of a post.
+ * 
+ * @param req - The request object, containing the post ID in the parameters.
+ * @param resp - The response object, used to send the response back to the client.
+ * 
+ * @returns A JSON response with the deleted post data or an error message.
+ * 
+ * @throws Will return a 400 status code and an error message if the deletion fails.
+ */
 export const deleteMiddleware = async (req: Request, resp: Response) => {
     try {
         const deletedPost = await deletePost(Number(req.params.id));
