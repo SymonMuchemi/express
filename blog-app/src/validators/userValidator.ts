@@ -15,8 +15,8 @@ export const userSchema = checkSchema({
             errorMessage: 'Username must be a string!'
         },
         isLength: {
-            options: { min: 10, max: 50 },
-            errorMessage: 'Username must be a string of 10-50 characters!'
+            options: { min: 5, max: 20 },
+            errorMessage: 'Username must be a string of 5-20 characters!'
         }
     }
 })
