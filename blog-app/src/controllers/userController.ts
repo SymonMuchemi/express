@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, User } from "@prisma/client";
 
 const prisma: PrismaClient = new PrismaClient();
 
@@ -9,7 +9,7 @@ const prisma: PrismaClient = new PrismaClient();
  * @returns {Promise<Array>} A promise that resolves to an array of user objects.
  */
 export const getAllUsers = async () => {
-    const users = await prisma.user.findMany();
+    const users: User[] = await prisma.user.findMany();
 
     return users
 }
