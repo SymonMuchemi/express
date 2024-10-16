@@ -9,4 +9,3 @@ export const getUsers = async (req: Request, resp: Response) => {
         resp.status(500).json({ Error: error.toString() });
     }
 }
-
