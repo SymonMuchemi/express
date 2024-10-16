@@ -1,7 +1,7 @@
 import { PrismaClient, User } from "@prisma/client";
+import { UserBody } from "../types/types";
 
 const prisma: PrismaClient = new PrismaClient();
-
 
 /**
  * Retrieves all users from the database.
@@ -26,4 +26,19 @@ export const fetchUserById = async (id: number) => {
     });
 
     return user;
+}
+
+/**
+ * Creates a new user in the database.
+ *
+ * @param userBody - An object containing the user's name and email.
+ * @returns A promise that resolves to the created user object.
+ */
+export const createUser = async (userBody: UserBody) => {
+    const { name, email } = userBody;
+    const result = await prisma.user.create({
+        data: { name, email }
+    });
+
+    return result
 }
