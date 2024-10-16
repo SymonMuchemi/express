@@ -87,7 +87,7 @@ export const create = async (req: Request, resp: Response) => {
  */
 export const publish = async (req: Request, resp: Response) => {
     try {
-        const post = publishPost(Number(req.params.id));
+        await publishPost(Number(req.params.id));
         resp.json({ message: 'Post published!' })
     } catch (error: any) {
         resp.status(400).json({ error: error.toString() })
