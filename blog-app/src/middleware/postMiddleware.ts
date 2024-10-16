@@ -33,8 +33,7 @@ export const getPosts = async (req: Request, resp: Response) => {
  */
 export const getPostById = async (req: Request, resp: Response) => {
     try {
-        const id: number = Number(req.params.id);
-        const post = await fetchPostById(id);
+        const post = await fetchPostById(Number(req.params.id));
 
         resp.json(post)
     } catch (error: any) {
