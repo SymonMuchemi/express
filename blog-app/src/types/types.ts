@@ -4,7 +4,7 @@ export interface PostBody {
     authorEmail: string;
 }
 
-export interface User {
+export interface UserBody {
     name: string;
     email: string;
 }
