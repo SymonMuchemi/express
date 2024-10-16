@@ -62,3 +62,11 @@ export const publishPost = async (id: number) => {
 
     return publishedPost;
 }
+
+export const deletePost = async (id: number) => {
+    const deletedPost = await prisma.post.delete({
+        where: { id: id }
+    });
+
+    return deletedPost;
+}
