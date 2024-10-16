@@ -47,3 +47,18 @@ export const createPost = async (postBody: PostBody) => {
 
     return result;
 }
+
+/**
+ * Publishes a post by updating its `published` status to `true`.
+ *
+ * @param id - The unique identifier of the post to be published.
+ * @returns A promise that resolves to the updated post object.
+ */
+export const publishPost = async (id: number) => {
+    const publishedPost = await prisma.post.update({
+        where: { id: id },
+        data: { published: true }
+    });
+
+    return publishedPost;
+}
