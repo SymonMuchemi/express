@@ -4,7 +4,8 @@ import {
     fetchAllPosts,
     fetchPostById,
     createPost,
-    publishPost
+    publishPost,
+    deletePost
 } from "../controllers/postController";
 
 /**
@@ -91,5 +92,14 @@ export const publish = async (req: Request, resp: Response) => {
         resp.json({ message: 'Post published!' })
     } catch (error: any) {
         resp.status(400).json({ error: error.toString() })
+    }
+}
+
+export const deleteMiddleware = async (req: Request, resp: Response) => {
+    try {
+        const deletedPost = await deletePost(Number(req.params.id));
+        resp.json(deletedPost)
+    } catch (error: any) {
+        resp.status(400).json({ message: 'Error deleting post!', details: error.toString() });
     }
 }
