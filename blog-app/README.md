@@ -26,6 +26,22 @@ pnpm run dev
 
 1. Navigate to `http://localhost:3000` in your browser to view the app.
 
+## Features
+
+The app has the following features:
+
+- [x] Create a new user.
+- [x] Fetch all users.
+- [x] Fetch a single user by ID.
+- [x] Create a new blog post.
+- [x] Fetch all blog posts.
+- [x] Fetch a single blog post by ID.
+- [x] Publish a blog post.
+- [x] Fetch all published blog posts.
+- [x] Delete a blog post.
+- [ ] Register a user.
+- [ ] Login a user.
+
 ## Routes
 
 The app has the following routes:
@@ -43,7 +59,6 @@ The app has the following routes:
 1. `GET /api/users` - Fetch all users.
 2. `GET /api/users/:id` - Fetch a single user.
 3. `POST /api/users` - Create a new user.
-
 
 ## Screenshots
 
