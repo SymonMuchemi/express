@@ -4,6 +4,6 @@ import { getFeed } from "../middleware/feedMiddleware";
 
 const feedRouter: Router = express.Router();
 
-feedRouter.get('/', asyncHandler(getFeed));
+feedRouter.get('/feed', asyncHandler(getFeed));
 
 export default feedRouter;
