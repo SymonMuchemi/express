@@ -35,9 +35,9 @@ export const fetchUserById = async (id: number) => {
  * @returns A promise that resolves to the created user object.
  */
 export const createUser = async (userBody: UserBody) => {
-    const { name, email } = userBody;
+    const { name, email, password } = userBody;
     const result = await prisma.user.create({
-        data: { name, email }
+        data: { name, email, password }
     });
 
     return result
